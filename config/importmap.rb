@@ -2,5 +2,5 @@
 
 pin "application"
 pin "@hotwired/turbo-rails", to: "turbo.min.js"
-pin "bootstrap" # @5.3.3
-pin "@popperjs/core", to: "@popperjs--core.js" # @2.11.8
+pin "bootstrap", to: 'bootstrap.min.js', preload: true # @5.3.3
+pin "popper", to: 'popper.js', preload: true # @2.11.8
