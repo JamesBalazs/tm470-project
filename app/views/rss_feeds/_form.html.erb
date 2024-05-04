@@ -11,17 +11,26 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="row g-3 align-items-center">
+    <div class="col-md-1">
+        <%= form.label :title, class: "form-label-col" %>
+    </div>
+    <div class="col-auto">
+        <%= form.text_field :title, class: "form-control" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :url, style: "display: block" %>
-    <%= form.text_field :url %>
+  <div class="row g-3 align-items-center">
+      <div class="col-md-1">
+          <%= form.label :url, class: "form-label-col" %>
+      </div>
+      <div class="col-auto">
+          <%= form.text_field :url, class: "form-control" %>
+      </div>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="button-toolbar mt-2">
+    <%= form.submit "Save", class: 'btn btn-primary' %>
+    <%= link_to "Back to RSS Feeds", rss_feeds_path, class: 'btn btn-danger' %>
   </div>
 <% end %>

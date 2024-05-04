@@ -1,14 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Rss feeds</h1>
+<h1>RSS Feeds</h1>
 
-<div id="rss_feeds">
-  <% @rss_feeds.each do |rss_feed| %>
-    <%= render rss_feed %>
-    <p>
-      <%= link_to "Show this rss feed", rss_feed %>
-    </p>
-  <% end %>
+<div id="rss_feeds" class="col">
+    <ul class="list-group">
+        <% @rss_feeds.each_with_index do |rss_feed, i| %>
+            <li class="list-group-item">
+                <div class="row g-0 text-nowrap align-items-center">
+                    <div class="col-md-8">
+                        <%= i+1 %>: <%= render rss_feed %>
+                    </div>
+                    <div class="col-md-4 btn-toolbar">
+                        <%= link_to "Edit RSS Feed", edit_rss_feed_path(rss_feed), class: 'btn btn-secondary me-2' %>
+                        <%= button_to "Delete RSS Feed", rss_feed, method: :delete, class: 'btn btn-danger' %>
+                    </div>
+                </div>
+            </li>
+        <% end %>
+    </ul>
 </div>
 
-<%= link_to "New rss feed", new_rss_feed_path %>
+<%= link_to "New RSS Feed", new_rss_feed_path, class: 'btn btn-primary mt-2' %>
