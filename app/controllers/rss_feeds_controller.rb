@@ -21,7 +21,7 @@ class RssFeedsController < ApplicationController
 
     respond_to do |format|
       if @rss_feed.save
-        format.html { redirect_to rss_feeds_url, notice: "RSS Feed was successfully created." }
+        format.html { redirect_to rss_feeds_url }
         format.json { render :show, status: :created, location: @rss_feed }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -34,7 +34,7 @@ class RssFeedsController < ApplicationController
   def update
     respond_to do |format|
       if @rss_feed.update(rss_feed_params)
-        format.html { redirect_to rss_feeds_url, notice: "RSS Feed was successfully updated." }
+        format.html { redirect_to rss_feeds_url }
         format.json { render :show, status: :ok, location: @rss_feed }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -48,7 +48,7 @@ class RssFeedsController < ApplicationController
     @rss_feed.destroy!
 
     respond_to do |format|
-      format.html { redirect_to rss_feeds_url, notice: "RSS Feed was successfully destroyed." }
+      format.html { redirect_to rss_feeds_url }
       format.json { head :no_content }
     end
   end
