@@ -6,18 +6,20 @@
 
 <div id="rss_feeds" class="col">
     <ul class="list-group">
-        <% @rss_feeds.each_with_index do |rss_feed, i| %>
-            <li class="list-group-item">
-                <div class="row g-0 text-nowrap align-items-center">
-                    <div class="col-md-8">
-                        <%= i+1 %>: <%= render rss_feed %>
+        <%= turbo_frame_tag 'rss_feeds' do %>
+            <% @rss_feeds.each_with_index do |rss_feed, i| %>
+                <li class="list-group-item">
+                    <div class="row g-0 text-nowrap align-items-center">
+                        <div class="col-md-8">
+                            <%= i+1 %>: <%= render rss_feed %>
+                        </div>
+                        <div class="col-md-4 btn-toolbar">
+                            <%= link_to "Edit RSS Feed", edit_rss_feed_path(rss_feed), class: 'btn btn-secondary me-2' %>
+                            <%= button_to "Delete RSS Feed", rss_feed, method: :delete, class: 'btn btn-danger' %>
+                        </div>
                     </div>
-                    <div class="col-md-4 btn-toolbar">
-                        <%= link_to "Edit RSS Feed", edit_rss_feed_path(rss_feed), class: 'btn btn-secondary me-2' %>
-                        <%= button_to "Delete RSS Feed", rss_feed, method: :delete, class: 'btn btn-danger' %>
-                    </div>
-                </div>
-            </li>
+                </li>
+            <% end %>
         <% end %>
     </ul>
 </div>
