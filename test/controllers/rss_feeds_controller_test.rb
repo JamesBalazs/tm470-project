@@ -20,12 +20,7 @@ class RssFeedsControllerTest < ActionDispatch::IntegrationTest
       post rss_feeds_url, params: { rss_feed: { title: @rss_feed.title, url: @rss_feed.url } }
     end
 
-    assert_redirected_to rss_feed_url(RssFeed.last)
-  end
-
-  test "should show rss_feed" do
-    get rss_feed_url(@rss_feed)
-    assert_response :success
+    assert_redirected_to rss_feeds_url
   end
 
   test "should get edit" do
@@ -34,8 +29,10 @@ class RssFeedsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update rss_feed" do
-    patch rss_feed_url(@rss_feed), params: { rss_feed: { title: @rss_feed.title, url: @rss_feed.url } }
-    assert_redirected_to rss_feed_url(@rss_feed)
+    new_title = 'new title'
+    patch rss_feed_url(@rss_feed), params: { rss_feed: { title: new_title, url: @rss_feed.url } }
+    assert(@rss_feed.reload.title == new_title)
+    assert_redirected_to rss_feeds_url
   end
 
   test "should destroy rss_feed" do
