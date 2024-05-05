@@ -24,6 +24,7 @@ class RssFeedsController < ApplicationController
         format.html { redirect_to rss_feeds_url }
         format.json { render :show, status: :created, location: @rss_feed }
       else
+        format.turbo_stream { render :new, status: :unprocessable_entity }
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @rss_feed.errors, status: :unprocessable_entity }
       end
@@ -37,6 +38,7 @@ class RssFeedsController < ApplicationController
         format.html { redirect_to rss_feeds_url }
         format.json { render :show, status: :ok, location: @rss_feed }
       else
+        format.turbo_stream { render :edit, status: :unprocessable_entity }
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @rss_feed.errors, status: :unprocessable_entity }
       end

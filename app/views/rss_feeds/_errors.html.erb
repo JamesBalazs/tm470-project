@@ -1,0 +1,13 @@
+<%= turbo_frame_tag 'errors' do %>
+  <% if rss_feed.errors.any? %>
+    <div class="alert alert-danger">
+      <p><%= pluralize(rss_feed.errors.count, "error") %> prohibited this RSS Feed from being saved:</p>
+
+      <ul>
+        <% rss_feed.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>

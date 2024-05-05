@@ -1,15 +1,5 @@
 <%= form_with(model: rss_feed) do |form| %>
-  <% if rss_feed.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(rss_feed.errors.count, "error") %> prohibited this rss_feed from being saved:</h2>
-
-      <ul>
-        <% rss_feed.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: 'errors', locals: { rss_feed: rss_feed } %>
 
   <div class="row g-3 align-items-center">
     <div class="col-md-1">
