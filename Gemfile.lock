@@ -138,6 +138,8 @@ GEM
     minitest (5.22.3)
     msgpack (1.7.2)
     mutex_m (0.1.2)
+    neighbor (0.3.2)
+      activerecord (>= 6.1)
     net-imap (0.3.4.1)
       date
       net-protocol
@@ -258,6 +260,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  neighbor
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.2)
