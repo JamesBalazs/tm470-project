@@ -17,6 +17,10 @@
           <%= link_to 'RSS Feeds', rss_feeds_path, class: navbar_link_class(active == :rss_feeds) %>
         </li>
 
+        <li class="nav-item">
+          <%= button_to 'Fetch Articles', fetch_articles_path, action: :post %>
+        </li>
+
       </ul>
     </div>
   </div>

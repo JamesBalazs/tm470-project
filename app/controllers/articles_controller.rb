@@ -1,3 +1,6 @@
+require 'rss'
+require 'open-uri'
+
 class ArticlesController < ApplicationController
   # GET /articles or /articles.json
   def index
@@ -5,7 +8,16 @@ class ArticlesController < ApplicationController
   end
 
   def fetch
+    items = []
 
+    RssFeed.all.each do |feed|
+      URI.open(feed.url) do |rss|
+        parser = RSS::Parser.parse(rss)
+        items = parser.items.map { |item| { title: item.title, link: item.link, body: item.description, rss_feed_id: feed.id } }
+      end
+    end
+
+    Article.create!(items)
   end
 
   private

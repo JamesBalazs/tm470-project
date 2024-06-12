@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :articles, only: [:index] do
-    post :fetch
+    collection do
+      post :fetch
+    end
   end
   resources :rss_feeds, except: [:show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

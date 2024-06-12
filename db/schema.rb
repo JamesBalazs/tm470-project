@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_09_185629) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_12_165748) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "vector"
@@ -19,13 +19,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_09_185629) do
     t.string "title"
     t.text "body"
     t.float "sentiment"
-    t.bigint "rss_feeds_id", null: false
-    t.bigint "groups_id", null: false
+    t.bigint "rss_feed_id", null: false
+    t.bigint "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.vector "embedding"
-    t.index ["groups_id"], name: "index_articles_on_groups_id"
-    t.index ["rss_feeds_id"], name: "index_articles_on_rss_feeds_id"
+    t.string "link"
+    t.index ["group_id"], name: "index_articles_on_group_id"
+    t.index ["rss_feed_id"], name: "index_articles_on_rss_feed_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -41,6 +42,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_09_185629) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "articles", "groups", column: "groups_id"
-  add_foreign_key "articles", "rss_feeds", column: "rss_feeds_id"
+  add_foreign_key "articles", "groups"
+  add_foreign_key "articles", "rss_feeds"
 end
