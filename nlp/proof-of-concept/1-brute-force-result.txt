@@ -1,0 +1,30 @@
+sky_news 0:
+ - bbc_news 0                             : 0.8548
+sky_news 1:
+ - bbc_news 0                             : 0.0623
+sky_news 2:
+ - bbc_news 0                             : -0.1282
+sky_news 0:
+ - reuters 0                             : 0.1068
+ - reuters 1                             : 0.0348
+sky_news 1:
+ - reuters 0                             : 0.6773
+ - reuters 1                             : 0.2254
+sky_news 2:
+ - reuters 0                             : 0.0917
+ - reuters 1                             : -0.0018
+sky_news 0:
+ - japan_times 0                             : 0.0258
+sky_news 1:
+ - japan_times 0                             : 0.1329
+sky_news 2:
+ - japan_times 0                             : -0.0101
+bbc_news 0:
+ - reuters 0                             : 0.0718
+ - reuters 1                             : -0.0263
+bbc_news 0:
+ - japan_times 0                             : 0.0067
+reuters 0:
+ - japan_times 0                             : 0.0698
+reuters 1:
+ - japan_times 0                             : 0.8293
