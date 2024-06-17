@@ -1,0 +1,18 @@
+[RSS Feeds x Articles per feed]
+Time (seconds) for brute force cosine similarity
+100 repetitions
+
+2x1 embeddings:  1.4684143739999627
+2x2 embeddings:  2.6968495280000297
+2x4 embeddings:  3.3923145600000453
+4x1 embeddings:  3.1085907549999092
+4x2 embeddings:  4.673674774999995
+4x4 embeddings:  8.679966327999978
+2x1 similarities:  0.003002622999929372
+2x2 similarities:  0.0033653100000492486
+2x4 similarities:  0.0030858560000979196
+4x1 similarities:  0.014374786000075801
+4x2 similarities:  0.028659466000021894
+4x4 similarities:  0.01986728999997922
+10x100 random embeddings:  36.4058518490001
+10x100 random similarities:  0.3864377219999824
