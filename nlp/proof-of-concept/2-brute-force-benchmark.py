@@ -94,7 +94,7 @@ feeds_4x4 = {
         "Ukraine to sign security agreements with Japan and US at G7: Ukraine's President Volodymyr Zelenskiy said he would sign a security agreement with Japan as well as one with the United States at the Group of Seven summit in Italy on Thursday."
     ],
     "japan_times": [
-        "U.S. ran secret anti-vaccine campaign to undermine China during pandemic: At the height of the COVID-19 pandemic, the U.S. military launched a secret campaign to counter what it perceived as China’s growing influence in the Philippines, a nation hit especially hard by the deadly virus."
+        "U.S. ran secret anti-vaccine campaign to undermine China during pandemic: At the height of the COVID-19 pandemic, the U.S. military launched a secret campaign to counter what it perceived as China’s growing influence in the Philippines, a nation hit especially hard by the deadly virus.",
         "In perspective: a firsthand account of this year’s G7: In an increasingly multipolar world, the bloc's relevance comes into question, but any attempt to foster dialogue and ease tensions should be welcomed.",
         "Aid groups welcome pauses in fighting but say Israel must do more to ease hunger: Some aid groups expressed skepticism that the Israeli military’s action would be transformative.",
         "Clock ticking for transfer of Tokyo giant panda cub twins to China: With the twin giant panda cubs at Tokyo's Ueno Zoo turning 3 years old on Sunday, the clock is ticking for their eventual transfer to China."
