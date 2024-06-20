@@ -1,0 +1,460 @@
+model: default
+{
+  "sky_news": [
+    {
+      "text": "Greece shuts schools and Acropolis as heatwave hits: Greece has shuttered tourist hotspots and schools across Athens as the first heatwave of the summer strikes.",
+      "label": "NEGATIVE",
+      "score": 0.9955726861953735
+    },
+    {
+      "text": "'These are impossible conditions': Mother of freed hostage feared the worst for son held by Hamas: Evgeniia Kozlova was at home in St Petersburg last weekend when she got the call from her Israeli liaison officers.",
+      "label": "NEGATIVE",
+      "score": 0.9954161643981934
+    },
+    {
+      "text": "Post Office campaigner Alan Bates given knighthood - but insists there's still 'work to do': The campaigner has insisted the honour won't change his life, while his wife Suzanne told Sky News she is \"very proud\" of her \"very deserving\" husband.",
+      "label": "POSITIVE",
+      "score": 0.979312539100647
+    },
+    {
+      "text": "E.coli: Full list of products recalled by sandwich suppliers: Dozens of sandwiches, wraps and salads have been recalled as health officials work to track down the source of an E.coli outbreak - here are all the products recalled.",
+      "label": "NEGATIVE",
+      "score": 0.9988735318183899
+    }
+  ],
+  "bbc_news": [
+    {
+      "text": "Greek schools close because of 'historic' heatwave: Lots of schools in Greece have shut as the country experiences its first heatwave of the summer.",
+      "label": "NEGATIVE",
+      "score": 0.9784308075904846
+    },
+    {
+      "text": "King and Queen appear in Order of Garter ceremony: It was a plume with a view for the royals at Windsor this afternoon, as the King and Queen took part in the Order of the Garter ceremony.",
+      "label": "POSITIVE",
+      "score": 0.9469974040985107
+    },
+    {
+      "text": "Petrol prices higher than they should be, says RAC: British drivers are facing petrol and diesel prices that are \"far higher than they should be\", according to the RAC.",
+      "label": "NEGATIVE",
+      "score": 0.9858613014221191
+    },
+    {
+      "text": "'A win is a win': England fans react to opening match: England fans have celebrated the team's victory over Serbia in their first Euro 2024 match.",
+      "label": "POSITIVE",
+      "score": 0.9998173117637634
+    }
+  ],
+  "reuters": [
+    {
+      "text": "Freed hostage from Gaza needs 'time to heal', loved ones say: The mother of Andrey Kozlov, a hostage freed from Gaza, says she's the 'happiest' she's ever been",
+      "label": "NEGATIVE",
+      "score": 0.9830245971679688
+    },
+    {
+      "text": "Pentagon ran secret anti-vax campaign to undermine China during pandemic: The U.S. military launched a clandestine program amid the COVID crisis to discredit China\u2019s Sinovac inoculation \u2013 payback for Beijing\u2019s efforts to blame Washington for the pandemic. One target: the Filipino public. Health experts say the gambit was indefensible and put innocent lives at risk.",
+      "label": "NEGATIVE",
+      "score": 0.9912234544754028
+    },
+    {
+      "text": "Young British royals say 'We love you, Papa' in Father's Day message: The three young children of British heir-to-the-throne Prince William and his wife Kate released a Father's Day message and photograph on Sunday, saying \"We love you, Papa\".",
+      "label": "POSITIVE",
+      "score": 0.9986996650695801
+    },
+    {
+      "text": "Ukraine to sign security agreements with Japan and US at G7: Ukraine's President Volodymyr Zelenskiy said he would sign a security agreement with Japan as well as one with the United States at the Group of Seven summit in Italy on Thursday.",
+      "label": "POSITIVE",
+      "score": 0.9788105487823486
+    }
+  ],
+  "japan_times": [
+    {
+      "text": "U.S. ran secret anti-vaccine campaign to undermine China during pandemic: At the height of the COVID-19 pandemic, the U.S. military launched a secret campaign to counter what it perceived as China\u2019s growing influence in the Philippines, a nation hit especially hard by the deadly virus.",
+      "label": "NEGATIVE",
+      "score": 0.9969512224197388
+    },
+    {
+      "text": "In perspective: a firsthand account of this year\u2019s G7: In an increasingly multipolar world, the bloc's relevance comes into question, but any attempt to foster dialogue and ease tensions should be welcomed.",
+      "label": "POSITIVE",
+      "score": 0.9877896308898926
+    },
+    {
+      "text": "Aid groups welcome pauses in fighting but say Israel must do more to ease hunger: Some aid groups expressed skepticism that the Israeli military\u2019s action would be transformative.",
+      "label": "NEGATIVE",
+      "score": 0.9925098419189453
+    },
+    {
+      "text": "Clock ticking for transfer of Tokyo giant panda cub twins to China: With the twin giant panda cubs at Tokyo's Ueno Zoo turning 3 years old on Sunday, the clock is ticking for their eventual transfer to China.",
+      "label": "NEGATIVE",
+      "score": 0.9216609001159668
+    }
+  ]
+}
+=============
+model: KernAI/stock-news-distilbert
+{
+  "sky_news": [
+    {
+      "text": "Greece shuts schools and Acropolis as heatwave hits: Greece has shuttered tourist hotspots and schools across Athens as the first heatwave of the summer strikes.",
+      "label": "negative",
+      "score": 0.9976656436920166
+    },
+    {
+      "text": "'These are impossible conditions': Mother of freed hostage feared the worst for son held by Hamas: Evgeniia Kozlova was at home in St Petersburg last weekend when she got the call from her Israeli liaison officers.",
+      "label": "negative",
+      "score": 0.49998199939727783
+    },
+    {
+      "text": "Post Office campaigner Alan Bates given knighthood - but insists there's still 'work to do': The campaigner has insisted the honour won't change his life, while his wife Suzanne told Sky News she is \"very proud\" of her \"very deserving\" husband.",
+      "label": "neutral",
+      "score": 0.9831127524375916
+    },
+    {
+      "text": "E.coli: Full list of products recalled by sandwich suppliers: Dozens of sandwiches, wraps and salads have been recalled as health officials work to track down the source of an E.coli outbreak - here are all the products recalled.",
+      "label": "neutral",
+      "score": 0.9971585273742676
+    }
+  ],
+  "bbc_news": [
+    {
+      "text": "Greek schools close because of 'historic' heatwave: Lots of schools in Greece have shut as the country experiences its first heatwave of the summer.",
+      "label": "negative",
+      "score": 0.812588095664978
+    },
+    {
+      "text": "King and Queen appear in Order of Garter ceremony: It was a plume with a view for the royals at Windsor this afternoon, as the King and Queen took part in the Order of the Garter ceremony.",
+      "label": "neutral",
+      "score": 0.9819122552871704
+    },
+    {
+      "text": "Petrol prices higher than they should be, says RAC: British drivers are facing petrol and diesel prices that are \"far higher than they should be\", according to the RAC.",
+      "label": "neutral",
+      "score": 0.9074759483337402
+    },
+    {
+      "text": "'A win is a win': England fans react to opening match: England fans have celebrated the team's victory over Serbia in their first Euro 2024 match.",
+      "label": "positive",
+      "score": 0.9846662282943726
+    }
+  ],
+  "reuters": [
+    {
+      "text": "Freed hostage from Gaza needs 'time to heal', loved ones say: The mother of Andrey Kozlov, a hostage freed from Gaza, says she's the 'happiest' she's ever been",
+      "label": "neutral",
+      "score": 0.9924477338790894
+    },
+    {
+      "text": "Pentagon ran secret anti-vax campaign to undermine China during pandemic: The U.S. military launched a clandestine program amid the COVID crisis to discredit China\u2019s Sinovac inoculation \u2013 payback for Beijing\u2019s efforts to blame Washington for the pandemic. One target: the Filipino public. Health experts say the gambit was indefensible and put innocent lives at risk.",
+      "label": "negative",
+      "score": 0.99783855676651
+    },
+    {
+      "text": "Young British royals say 'We love you, Papa' in Father's Day message: The three young children of British heir-to-the-throne Prince William and his wife Kate released a Father's Day message and photograph on Sunday, saying \"We love you, Papa\".",
+      "label": "neutral",
+      "score": 0.9681786894798279
+    },
+    {
+      "text": "Ukraine to sign security agreements with Japan and US at G7: Ukraine's President Volodymyr Zelenskiy said he would sign a security agreement with Japan as well as one with the United States at the Group of Seven summit in Italy on Thursday.",
+      "label": "positive",
+      "score": 0.9897221922874451
+    }
+  ],
+  "japan_times": [
+    {
+      "text": "U.S. ran secret anti-vaccine campaign to undermine China during pandemic: At the height of the COVID-19 pandemic, the U.S. military launched a secret campaign to counter what it perceived as China\u2019s growing influence in the Philippines, a nation hit especially hard by the deadly virus.",
+      "label": "negative",
+      "score": 0.9961079955101013
+    },
+    {
+      "text": "In perspective: a firsthand account of this year\u2019s G7: In an increasingly multipolar world, the bloc's relevance comes into question, but any attempt to foster dialogue and ease tensions should be welcomed.",
+      "label": "neutral",
+      "score": 0.975865364074707
+    },
+    {
+      "text": "Aid groups welcome pauses in fighting but say Israel must do more to ease hunger: Some aid groups expressed skepticism that the Israeli military\u2019s action would be transformative.",
+      "label": "neutral",
+      "score": 0.9671438336372375
+    },
+    {
+      "text": "Clock ticking for transfer of Tokyo giant panda cub twins to China: With the twin giant panda cubs at Tokyo's Ueno Zoo turning 3 years old on Sunday, the clock is ticking for their eventual transfer to China.",
+      "label": "neutral",
+      "score": 0.9911391139030457
+    }
+  ]
+}
+=============
+model: mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis
+{
+  "sky_news": [
+    {
+      "text": "Greece shuts schools and Acropolis as heatwave hits: Greece has shuttered tourist hotspots and schools across Athens as the first heatwave of the summer strikes.",
+      "label": "negative",
+      "score": 0.9876008033752441
+    },
+    {
+      "text": "'These are impossible conditions': Mother of freed hostage feared the worst for son held by Hamas: Evgeniia Kozlova was at home in St Petersburg last weekend when she got the call from her Israeli liaison officers.",
+      "label": "neutral",
+      "score": 0.8288018107414246
+    },
+    {
+      "text": "Post Office campaigner Alan Bates given knighthood - but insists there's still 'work to do': The campaigner has insisted the honour won't change his life, while his wife Suzanne told Sky News she is \"very proud\" of her \"very deserving\" husband.",
+      "label": "positive",
+      "score": 0.8898380994796753
+    },
+    {
+      "text": "E.coli: Full list of products recalled by sandwich suppliers: Dozens of sandwiches, wraps and salads have been recalled as health officials work to track down the source of an E.coli outbreak - here are all the products recalled.",
+      "label": "negative",
+      "score": 0.5214425921440125
+    }
+  ],
+  "bbc_news": [
+    {
+      "text": "Greek schools close because of 'historic' heatwave: Lots of schools in Greece have shut as the country experiences its first heatwave of the summer.",
+      "label": "negative",
+      "score": 0.9834453463554382
+    },
+    {
+      "text": "King and Queen appear in Order of Garter ceremony: It was a plume with a view for the royals at Windsor this afternoon, as the King and Queen took part in the Order of the Garter ceremony.",
+      "label": "neutral",
+      "score": 0.9998786449432373
+    },
+    {
+      "text": "Petrol prices higher than they should be, says RAC: British drivers are facing petrol and diesel prices that are \"far higher than they should be\", according to the RAC.",
+      "label": "negative",
+      "score": 0.992238461971283
+    },
+    {
+      "text": "'A win is a win': England fans react to opening match: England fans have celebrated the team's victory over Serbia in their first Euro 2024 match.",
+      "label": "positive",
+      "score": 0.9957259893417358
+    }
+  ],
+  "reuters": [
+    {
+      "text": "Freed hostage from Gaza needs 'time to heal', loved ones say: The mother of Andrey Kozlov, a hostage freed from Gaza, says she's the 'happiest' she's ever been",
+      "label": "positive",
+      "score": 0.9937329888343811
+    },
+    {
+      "text": "Pentagon ran secret anti-vax campaign to undermine China during pandemic: The U.S. military launched a clandestine program amid the COVID crisis to discredit China\u2019s Sinovac inoculation \u2013 payback for Beijing\u2019s efforts to blame Washington for the pandemic. One target: the Filipino public. Health experts say the gambit was indefensible and put innocent lives at risk.",
+      "label": "negative",
+      "score": 0.5358884930610657
+    },
+    {
+      "text": "Young British royals say 'We love you, Papa' in Father's Day message: The three young children of British heir-to-the-throne Prince William and his wife Kate released a Father's Day message and photograph on Sunday, saying \"We love you, Papa\".",
+      "label": "neutral",
+      "score": 0.9997681975364685
+    },
+    {
+      "text": "Ukraine to sign security agreements with Japan and US at G7: Ukraine's President Volodymyr Zelenskiy said he would sign a security agreement with Japan as well as one with the United States at the Group of Seven summit in Italy on Thursday.",
+      "label": "positive",
+      "score": 0.8655224442481995
+    }
+  ],
+  "japan_times": [
+    {
+      "text": "U.S. ran secret anti-vaccine campaign to undermine China during pandemic: At the height of the COVID-19 pandemic, the U.S. military launched a secret campaign to counter what it perceived as China\u2019s growing influence in the Philippines, a nation hit especially hard by the deadly virus.",
+      "label": "neutral",
+      "score": 0.9991835951805115
+    },
+    {
+      "text": "In perspective: a firsthand account of this year\u2019s G7: In an increasingly multipolar world, the bloc's relevance comes into question, but any attempt to foster dialogue and ease tensions should be welcomed.",
+      "label": "neutral",
+      "score": 0.9987420439720154
+    },
+    {
+      "text": "Aid groups welcome pauses in fighting but say Israel must do more to ease hunger: Some aid groups expressed skepticism that the Israeli military\u2019s action would be transformative.",
+      "label": "positive",
+      "score": 0.8786325454711914
+    },
+    {
+      "text": "Clock ticking for transfer of Tokyo giant panda cub twins to China: With the twin giant panda cubs at Tokyo's Ueno Zoo turning 3 years old on Sunday, the clock is ticking for their eventual transfer to China.",
+      "label": "neutral",
+      "score": 0.9995138645172119
+    }
+  ]
+}
+=============
+model: bucketresearch/politicalBiasBERT
+{
+  "sky_news": [
+    {
+      "text": "Greece shuts schools and Acropolis as heatwave hits: Greece has shuttered tourist hotspots and schools across Athens as the first heatwave of the summer strikes.",
+      "label": "LEFT",
+      "score": 0.5613972544670105
+    },
+    {
+      "text": "'These are impossible conditions': Mother of freed hostage feared the worst for son held by Hamas: Evgeniia Kozlova was at home in St Petersburg last weekend when she got the call from her Israeli liaison officers.",
+      "label": "CENTER",
+      "score": 0.5229432582855225
+    },
+    {
+      "text": "Post Office campaigner Alan Bates given knighthood - but insists there's still 'work to do': The campaigner has insisted the honour won't change his life, while his wife Suzanne told Sky News she is \"very proud\" of her \"very deserving\" husband.",
+      "label": "RIGHT",
+      "score": 0.42223623394966125
+    },
+    {
+      "text": "E.coli: Full list of products recalled by sandwich suppliers: Dozens of sandwiches, wraps and salads have been recalled as health officials work to track down the source of an E.coli outbreak - here are all the products recalled.",
+      "label": "LEFT",
+      "score": 0.7530405521392822
+    }
+  ],
+  "bbc_news": [
+    {
+      "text": "Greek schools close because of 'historic' heatwave: Lots of schools in Greece have shut as the country experiences its first heatwave of the summer.",
+      "label": "CENTER",
+      "score": 0.5942808985710144
+    },
+    {
+      "text": "King and Queen appear in Order of Garter ceremony: It was a plume with a view for the royals at Windsor this afternoon, as the King and Queen took part in the Order of the Garter ceremony.",
+      "label": "RIGHT",
+      "score": 0.4770219326019287
+    },
+    {
+      "text": "Petrol prices higher than they should be, says RAC: British drivers are facing petrol and diesel prices that are \"far higher than they should be\", according to the RAC.",
+      "label": "CENTER",
+      "score": 0.9890390634536743
+    },
+    {
+      "text": "'A win is a win': England fans react to opening match: England fans have celebrated the team's victory over Serbia in their first Euro 2024 match.",
+      "label": "CENTER",
+      "score": 0.9299895167350769
+    }
+  ],
+  "reuters": [
+    {
+      "text": "Freed hostage from Gaza needs 'time to heal', loved ones say: The mother of Andrey Kozlov, a hostage freed from Gaza, says she's the 'happiest' she's ever been",
+      "label": "CENTER",
+      "score": 0.8119451999664307
+    },
+    {
+      "text": "Pentagon ran secret anti-vax campaign to undermine China during pandemic: The U.S. military launched a clandestine program amid the COVID crisis to discredit China\u2019s Sinovac inoculation \u2013 payback for Beijing\u2019s efforts to blame Washington for the pandemic. One target: the Filipino public. Health experts say the gambit was indefensible and put innocent lives at risk.",
+      "label": "RIGHT",
+      "score": 0.76323002576828
+    },
+    {
+      "text": "Young British royals say 'We love you, Papa' in Father's Day message: The three young children of British heir-to-the-throne Prince William and his wife Kate released a Father's Day message and photograph on Sunday, saying \"We love you, Papa\".",
+      "label": "CENTER",
+      "score": 0.8258952498435974
+    },
+    {
+      "text": "Ukraine to sign security agreements with Japan and US at G7: Ukraine's President Volodymyr Zelenskiy said he would sign a security agreement with Japan as well as one with the United States at the Group of Seven summit in Italy on Thursday.",
+      "label": "CENTER",
+      "score": 0.39971235394477844
+    }
+  ],
+  "japan_times": [
+    {
+      "text": "U.S. ran secret anti-vaccine campaign to undermine China during pandemic: At the height of the COVID-19 pandemic, the U.S. military launched a secret campaign to counter what it perceived as China\u2019s growing influence in the Philippines, a nation hit especially hard by the deadly virus.",
+      "label": "RIGHT",
+      "score": 0.39162173867225647
+    },
+    {
+      "text": "In perspective: a firsthand account of this year\u2019s G7: In an increasingly multipolar world, the bloc's relevance comes into question, but any attempt to foster dialogue and ease tensions should be welcomed.",
+      "label": "LEFT",
+      "score": 0.9347651600837708
+    },
+    {
+      "text": "Aid groups welcome pauses in fighting but say Israel must do more to ease hunger: Some aid groups expressed skepticism that the Israeli military\u2019s action would be transformative.",
+      "label": "CENTER",
+      "score": 0.36896082758903503
+    },
+    {
+      "text": "Clock ticking for transfer of Tokyo giant panda cub twins to China: With the twin giant panda cubs at Tokyo's Ueno Zoo turning 3 years old on Sunday, the clock is ticking for their eventual transfer to China.",
+      "label": "LEFT",
+      "score": 0.5189030170440674
+    }
+  ]
+}
+=============
+model: cardiffnlp/twitter-roberta-base-sentiment-latest
+{
+  "sky_news": [
+    {
+      "text": "Greece shuts schools and Acropolis as heatwave hits: Greece has shuttered tourist hotspots and schools across Athens as the first heatwave of the summer strikes.",
+      "label": "negative",
+      "score": 0.5907595753669739
+    },
+    {
+      "text": "'These are impossible conditions': Mother of freed hostage feared the worst for son held by Hamas: Evgeniia Kozlova was at home in St Petersburg last weekend when she got the call from her Israeli liaison officers.",
+      "label": "negative",
+      "score": 0.7927613258361816
+    },
+    {
+      "text": "Post Office campaigner Alan Bates given knighthood - but insists there's still 'work to do': The campaigner has insisted the honour won't change his life, while his wife Suzanne told Sky News she is \"very proud\" of her \"very deserving\" husband.",
+      "label": "neutral",
+      "score": 0.6125392317771912
+    },
+    {
+      "text": "E.coli: Full list of products recalled by sandwich suppliers: Dozens of sandwiches, wraps and salads have been recalled as health officials work to track down the source of an E.coli outbreak - here are all the products recalled.",
+      "label": "negative",
+      "score": 0.6860469579696655
+    }
+  ],
+  "bbc_news": [
+    {
+      "text": "Greek schools close because of 'historic' heatwave: Lots of schools in Greece have shut as the country experiences its first heatwave of the summer.",
+      "label": "negative",
+      "score": 0.6867985725402832
+    },
+    {
+      "text": "King and Queen appear in Order of Garter ceremony: It was a plume with a view for the royals at Windsor this afternoon, as the King and Queen took part in the Order of the Garter ceremony.",
+      "label": "neutral",
+      "score": 0.8164128661155701
+    },
+    {
+      "text": "Petrol prices higher than they should be, says RAC: British drivers are facing petrol and diesel prices that are \"far higher than they should be\", according to the RAC.",
+      "label": "negative",
+      "score": 0.7716566324234009
+    },
+    {
+      "text": "'A win is a win': England fans react to opening match: England fans have celebrated the team's victory over Serbia in their first Euro 2024 match.",
+      "label": "positive",
+      "score": 0.9311103820800781
+    }
+  ],
+  "reuters": [
+    {
+      "text": "Freed hostage from Gaza needs 'time to heal', loved ones say: The mother of Andrey Kozlov, a hostage freed from Gaza, says she's the 'happiest' she's ever been",
+      "label": "positive",
+      "score": 0.8767591714859009
+    },
+    {
+      "text": "Pentagon ran secret anti-vax campaign to undermine China during pandemic: The U.S. military launched a clandestine program amid the COVID crisis to discredit China\u2019s Sinovac inoculation \u2013 payback for Beijing\u2019s efforts to blame Washington for the pandemic. One target: the Filipino public. Health experts say the gambit was indefensible and put innocent lives at risk.",
+      "label": "negative",
+      "score": 0.7416720986366272
+    },
+    {
+      "text": "Young British royals say 'We love you, Papa' in Father's Day message: The three young children of British heir-to-the-throne Prince William and his wife Kate released a Father's Day message and photograph on Sunday, saying \"We love you, Papa\".",
+      "label": "positive",
+      "score": 0.7309111952781677
+    },
+    {
+      "text": "Ukraine to sign security agreements with Japan and US at G7: Ukraine's President Volodymyr Zelenskiy said he would sign a security agreement with Japan as well as one with the United States at the Group of Seven summit in Italy on Thursday.",
+      "label": "neutral",
+      "score": 0.816279411315918
+    }
+  ],
+  "japan_times": [
+    {
+      "text": "U.S. ran secret anti-vaccine campaign to undermine China during pandemic: At the height of the COVID-19 pandemic, the U.S. military launched a secret campaign to counter what it perceived as China\u2019s growing influence in the Philippines, a nation hit especially hard by the deadly virus.",
+      "label": "negative",
+      "score": 0.5848115682601929
+    },
+    {
+      "text": "In perspective: a firsthand account of this year\u2019s G7: In an increasingly multipolar world, the bloc's relevance comes into question, but any attempt to foster dialogue and ease tensions should be welcomed.",
+      "label": "neutral",
+      "score": 0.8138283491134644
+    },
+    {
+      "text": "Aid groups welcome pauses in fighting but say Israel must do more to ease hunger: Some aid groups expressed skepticism that the Israeli military\u2019s action would be transformative.",
+      "label": "neutral",
+      "score": 0.6072312593460083
+    },
+    {
+      "text": "Clock ticking for transfer of Tokyo giant panda cub twins to China: With the twin giant panda cubs at Tokyo's Ueno Zoo turning 3 years old on Sunday, the clock is ticking for their eventual transfer to China.",
+      "label": "neutral",
+      "score": 0.8111068606376648
+    }
+  ]
+}
+=============
