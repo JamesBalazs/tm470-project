@@ -1,0 +1,3 @@
+nlp\proof-of-concept> ruby .\8a-ruby-python-interop.rb
+output: {"groups": [[123, 456]]}
+status: pid 37604 exit 7
