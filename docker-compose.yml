@@ -24,7 +24,8 @@ services:
   nlp:
     build:
       context: ./nlp
-    command: bash -c "sleep 365d"
+    command: python server.py
+    working_dir: /nlp
     volumes:
       - type: bind
         source: ./nlp
