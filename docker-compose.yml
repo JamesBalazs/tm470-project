@@ -24,7 +24,13 @@ services:
   nlp:
     build:
       context: ./nlp
-    command: python server.py
+    command: [
+      "flask",
+      "--app", "./server.py",
+      "run",
+      "--host", "0.0.0.0",
+      "--debug",
+    ]
     working_dir: /nlp
     volumes:
       - type: bind

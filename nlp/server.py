@@ -30,13 +30,17 @@ def sentiment():
     except ValidationError as err:
         return jsonify(err.messages), 400
 
-    for feed, articles in articles_by_feed.items():
-        for i, article in enumerate(articles):
+    for idx, feed in enumerate(articles_by_feed):
+        for idy, article in enumerate(feed['articles']):
             text = f"#{article['title']}: #{article['body']}"
 
-            # merge article with label, score from classifier
-            articles_by_feed[feed][i] = { **articles_by_feed[feed][i], **(classifier(text)[0]) }
+            # sanity check for now, remove later
+            if articles_by_feed[idx]['id'] != feed['id']:
+                return jsonify({'error': "feed id didn't match"}), 500
+            if articles_by_feed[idx]['articles'][idy]['id'] != article['id']:
+                return jsonify({'error': "article id didn't match"}), 500
 
-    print(json.dumps(articles_by_feed, indent=2))
+            # merge article with label, score from classifier
+            articles_by_feed[idx]['articles'][idy] = { **articles_by_feed[idx]['articles'][idy], **(classifier(text)[0]) }
 
     return jsonify(articles_by_feed)

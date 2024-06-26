@@ -20,6 +20,15 @@ class ArticlesController < ApplicationController
     Article.create!(items)
   end
 
+  def update_sentiment
+    to_update = Article.select(:id, :rss_feed_id, :title, :body).group_by{ |article| article.rss_feed_id }
+    to_update = to_update.map{ |id, articles| { id: id, articles: articles } }
+
+    response = HTTParty.post(URI::HTTP.build(host: 'nlp', path: '/sentiment', port: 5000), body: to_update.to_json, headers: { 'Content-Type' => 'application/json' })
+
+    puts response
+  end
+
   private
 
   # Only allow a list of trusted parameters through.
