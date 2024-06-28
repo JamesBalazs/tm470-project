@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_12_165748) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_28_182223) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "vector"
@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_12_165748) do
     t.datetime "updated_at", null: false
     t.vector "embedding"
     t.string "link"
+    t.string "label"
     t.index ["group_id"], name: "index_articles_on_group_id"
     t.index ["rss_feed_id"], name: "index_articles_on_rss_feed_id"
   end

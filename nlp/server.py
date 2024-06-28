@@ -24,6 +24,32 @@ class ArticlesByFeedSchema(Schema):
 @app.route('/sentiment', methods=['POST'])
 def sentiment():
     request_data = request.json
+    articles_schema = ArticleSchema(many=True)
+
+    try:
+        articles = articles_schema.load(request_data)
+    except ValidationError as err:
+        return jsonify(err.messages), 400
+
+    for id, article in enumerate(articles):
+        text = f"#{article['title']}: #{article['body']}"
+
+        # sanity check for now, remove later
+        if articles[id]['id'] != article['id']:
+            return jsonify({'error': "article id didn't match"}), 500
+
+        result = classifier(text)[0]
+        articles[id] = {
+            **article,
+            'sentiment': result['score'],
+            'label': result['label']
+        }
+
+    return jsonify(articles)
+
+@app.route('/group', methods=['POST'])
+def group():
+    request_data = request.json
     articles_by_feed_schema = ArticlesByFeedSchema(many=True)
     try:
         articles_by_feed = articles_by_feed_schema.load(request_data)
