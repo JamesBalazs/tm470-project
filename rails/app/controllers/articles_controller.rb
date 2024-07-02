@@ -5,7 +5,12 @@ require 'nlp'
 class ArticlesController < ApplicationController
   # GET /articles or /articles.json
   def index
+    show_all = request.query_parameters['all'] == 'true'
+
     @articles = Article.all
+    @groups = Group.all.includes(:articles)
+
+    render locals: { show_all: show_all }
   end
 
   def refresh

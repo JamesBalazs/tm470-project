@@ -1,11 +1,59 @@
 <%= render partial: 'navbar', locals: { active: :articles } %>
 
-<p style="color: green"><%= notice %></p>
+<%= turbo_frame_tag 'articles' do %>
+    <h1>Articles</h1>
 
-<h1>Articles</h1>
+    <div class="btn-group pb-2" role="group">
+        <%= button_to "Refresh articles", refresh_articles_path, method: :post, class: 'btn btn-sm btn-info' %>
 
-<div id="articles">
-  <% @articles.each do |article| %>
-    <%= render article %>
-  <% end %>
-</div>
+        <% unless show_all %>
+            <%= link_to "Show All", { all: true }, class: 'btn btn-sm btn-success' %>
+        <% end %>
+
+        <% if show_all %>
+            <%= link_to "Show Groups", { }, class: 'btn btn-sm btn-danger' %>
+        <% end %>
+    </div>
+
+    <% unless show_all %>
+        <ul class="list-group">
+            <% @groups.each do |group| %>
+                <li class="list-group-item">
+                    <div class="row g-0 text-nowrap align-items-center">
+                        <h5>
+                            <%= group.articles.first.title %>
+                        </h5>
+
+                        <% group.articles.each do |article| %>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><%= article.rss_feed.title %></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>
+                                        <%= article.label %>
+                                        <%= article.sentiment %>
+                                    </p>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
+                </li>
+            <% end %>
+        </ul>
+    <% end %>
+
+    <% if show_all %>
+        <ul class="list-group">
+            <% @articles.each do |article| %>
+                <li class="list-group-item">
+                    <div class="row g-0 text-nowrap align-items-center">
+                        <div class="col-md-12">
+                            <%= render article %>
+                        </div>
+                    </div>
+                </li>
+            <% end %>
+        </ul>
+    <% end %>
+<% end %>
