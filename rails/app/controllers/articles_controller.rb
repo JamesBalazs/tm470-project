@@ -15,9 +15,9 @@ class ArticlesController < ApplicationController
         parser = RSS::Parser.parse(rss)
         items = parser.items.map { |item| { title: item.title, link: item.link, body: item.description, rss_feed_id: feed.id } }
       end
-    end
 
-    Article.create!(items)
+      Article.create!(items)
+    end
   end
 
   def update_sentiment
@@ -29,12 +29,26 @@ class ArticlesController < ApplicationController
   end
 
   def group
-    to_update = Article.select(:id, :rss_feed_id, :title, :body).group_by{ |article| article.rss_feed_id }
-    to_update = to_update.map{ |id, articles| { id: id, articles: articles } }
+    feeds = {}
 
-    response = HTTParty.post(URI::HTTP.build(host: 'nlp', path: '/sentiment', port: 5000), body: to_update.to_json, headers: { 'Content-Type' => 'application/json' })
-    processed_articles = response.parsed_response
-    Article.update_all(processed_articles.articles)
+    RssFeed.all.each do |feed|
+      articles = {}
+
+      feed.articles.select(:id, :rss_feed_id, :title, :body).each do |article|
+        articles[article.id] = article
+      end
+
+      feeds[feed.id] = { articles: articles }
+    end
+
+    response = HTTParty.post(URI::HTTP.build(host: 'nlp', path: '/group', port: 5000), body: { feeds: feeds }.to_json, headers: { 'Content-Type' => 'application/json' })
+    groups = response.parsed_response
+
+    groups.each do |article_ids|
+      articles = Article.where(id: article_ids)
+      group = Group.create!() # TODO needs a title
+      articles.update_all(group_id: group.id)
+    end
   end
 
   private

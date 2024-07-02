@@ -1,6 +1,7 @@
 import json
+import grouping, schemas
 from flask import Flask, jsonify, request
-from marshmallow import Schema, fields, ValidationError
+from marshmallow import ValidationError
 
 from transformers import pipeline, AutoModelForSequenceClassification, AutoTokenizer
 
@@ -11,20 +12,10 @@ classifier = pipeline('text-classification', model=model, tokenizer=tokenizer)
 
 app = Flask(__name__)
 
-class ArticleSchema(Schema):
-    id = fields.Integer(required=True)
-    rss_feed_id = fields.Integer(required=True)
-    title = fields.String(required=True)
-    body = fields.String(required=True)
-
-class ArticlesByFeedSchema(Schema):
-    id = fields.Integer(required=True)
-    articles = fields.Nested(ArticleSchema, many=True)
-
 @app.route('/sentiment', methods=['POST'])
 def sentiment():
     request_data = request.json
-    articles_schema = ArticleSchema(many=True)
+    articles_schema = schemas.ArticleSchema(many=True)
 
     try:
         articles = articles_schema.load(request_data)
@@ -50,23 +41,14 @@ def sentiment():
 @app.route('/group', methods=['POST'])
 def group():
     request_data = request.json
-    articles_by_feed_schema = ArticlesByFeedSchema(many=True)
+    feeds_schema = schemas.FeedsSchema()
     try:
-        articles_by_feed = articles_by_feed_schema.load(request_data)
+        feeds = feeds_schema.load(request_data)['feeds']
     except ValidationError as err:
         return jsonify(err.messages), 400
 
-    for idx, feed in enumerate(articles_by_feed):
-        for idy, article in enumerate(feed['articles']):
-            text = f"#{article['title']}: #{article['body']}"
+    feeds_with_embeddings = grouping.calculate_embeddings(feeds)
+    similarities = grouping.calculate_similarities(feeds_with_embeddings)
+    groups = grouping.group_by_similarity(feeds_with_embeddings, similarities)
 
-            # sanity check for now, remove later
-            if articles_by_feed[idx]['id'] != feed['id']:
-                return jsonify({'error': "feed id didn't match"}), 500
-            if articles_by_feed[idx]['articles'][idy]['id'] != article['id']:
-                return jsonify({'error': "article id didn't match"}), 500
-
-            # merge article with label, score from classifier
-            articles_by_feed[idx]['articles'][idy] = { **articles_by_feed[idx]['articles'][idy], **(classifier(text)[0]) }
-
-    return jsonify(articles_by_feed)
+    return jsonify(groups)

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     collection do
       post :fetch
       post :update_sentiment
+      post :group
     end
   end
   resources :rss_feeds, except: [:show]

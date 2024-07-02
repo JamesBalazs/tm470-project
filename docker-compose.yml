@@ -36,3 +36,4 @@ services:
       - type: bind
         source: ./nlp
         target: /nlp
+    tty: true
