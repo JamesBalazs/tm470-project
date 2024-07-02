@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   resources :articles, only: [:index] do
     collection do
-      post :fetch
-      post :update_sentiment
-      post :group
+      post :refresh
     end
   end
   resources :rss_feeds, except: [:show]
