@@ -27,12 +27,14 @@
                         <% group.articles.each do |article| %>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p><%= article.rss_feed.title %></p>
+                                    <p><%= link_to article.rss_feed.title, article.link %></p>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>
-                                        <%= article.label %>
-                                        <%= article.sentiment %>
+                                    <p title="<%= article.label.titlecase %>, Confidence: <%= article.sentiment.round(4) %>">
+                                        <strong>
+                                          <i class="bi bi-<%= article.emoji %>"></i>
+                                          <%= article.pretty_sentiment %>
+                                        </strong>
                                     </p>
                                 </div>
                             </div>

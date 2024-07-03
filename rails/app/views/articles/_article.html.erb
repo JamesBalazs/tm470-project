@@ -1,5 +1,6 @@
 <div id="<%= dom_id article %>">
     <h5><%= article.title %></h5>
     <p><%= article.body %></p>
-    <strong>Source:</strong> <%= article.rss_feed.title %>
+    <p><strong>Source:</strong> <%= link_to article.rss_feed.title, article.link %></p>
+    <p><strong>Sentiment:</strong> <i class="bi bi-<%= article.emoji %>"></i> <%= article.pretty_sentiment %></p>
 </div>

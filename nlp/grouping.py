@@ -2,7 +2,7 @@ from sentence_transformers import SentenceTransformer
 
 grouping_model = SentenceTransformer("all-MiniLM-L6-v2")
 
-GROUPING_THRESHOLD = 0.6
+GROUPING_THRESHOLD = 0.4
 
 def calculate_embeddings(feeds):
     for idx, feed in feeds.items():
