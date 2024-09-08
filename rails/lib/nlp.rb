@@ -9,12 +9,14 @@ module Nlp
         items = parser.items.map { |item| { title: item.title, link: item.link, body: item.description, rss_feed_id: feed.id } }
       end
 
-      Article.create!(items)
+      Article.create(items)
     end
   end
 
   def self.update_sentiment
     to_update = Article.select(:id, :rss_feed_id, :title, :body)
+
+    puts to_update
 
     response = HTTParty.post(URI::HTTP.build(host: 'nlp', path: '/sentiment', port: 5000), body: to_update.to_json, headers: { 'Content-Type' => 'application/json' })
 
