@@ -20,6 +20,8 @@ class ArticlesController < ApplicationController
     Nlp.fetch_articles
     Nlp.update_sentiment
     Nlp.group_articles
+
+    redirect_to(action: :index)
   end
 
   private

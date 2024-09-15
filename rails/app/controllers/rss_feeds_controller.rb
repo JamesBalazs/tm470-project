@@ -3,7 +3,7 @@ class RssFeedsController < ApplicationController
 
   # GET /rss_feeds or /rss_feeds.json
   def index
-    @rss_feeds = RssFeed.all
+    @rss_feeds = RssFeed.all.order('id DESC')
   end
 
   # GET /rss_feeds/new
